@@ -1,0 +1,88 @@
+---
+
+## 🧠 **Wireshark – Interview Questions & Key Concepts**
+
+### **Interview Questions**
+
+**1️⃣ What is Wireshark used for?**
+Wireshark is a **network protocol analyzer** used to capture and inspect data packets flowing through a network.
+It helps in **network troubleshooting, performance monitoring, and security analysis** by providing detailed insights into network traffic.
+
+---
+
+**2️⃣ What is a packet?**
+A packet is a **small unit of data** transmitted over a network.
+Each packet contains:
+
+* **Header** (control information: source/destination addresses, protocol info)
+* **Payload** (actual data being sent)
+
+---
+
+**3️⃣ How to filter packets in Wireshark?**
+You can filter packets using the **display filter bar**.
+Examples:
+
+* Show only HTTP traffic → `http`
+* Show only DNS traffic → `dns`
+* Show packets from a specific IP → `ip.addr == 192.168.1.10`
+* Combine filters → `http && ip.addr == 8.8.8.8`
+
+---
+
+**4️⃣ What is the difference between TCP and UDP?**
+
+| Feature             | TCP                                         | UDP                                |
+| ------------------- | ------------------------------------------- | ---------------------------------- |
+| **Full Form**       | Transmission Control Protocol               | User Datagram Protocol             |
+| **Connection Type** | Connection-oriented                         | Connectionless                     |
+| **Reliability**     | Reliable (acknowledgements, retransmission) | Unreliable (no delivery guarantee) |
+| **Speed**           | Slower                                      | Faster                             |
+| **Example Use**     | HTTP, FTP, HTTPS                            | DNS, VoIP, Streaming               |
+
+---
+
+**5️⃣ What is a DNS query packet?**
+A DNS query packet is a network request sent from a client to a **DNS server** to resolve a **domain name (e.g., google.com)** into an **IP address**.
+Wireshark shows these under the **DNS protocol**, typically using **UDP port 53**.
+
+---
+
+**6️⃣ How can packet capture help in troubleshooting?**
+Packet captures help by:
+
+* Identifying **connectivity issues** (dropped packets, latency)
+* Checking **DNS resolution** or **protocol errors**
+* Detecting **unauthorized or malicious traffic**
+* Analyzing **slow network performance**
+
+Wireshark allows you to see what’s happening at the **packet level**, making it easier to locate the root cause of network problems.
+
+---
+
+**7️⃣ What is a protocol?**
+A protocol is a **set of rules** that define how data is formatted, transmitted, and received across a network.
+Examples: **HTTP**, **TCP**, **UDP**, **DNS**, **ICMP**, **ARP**.
+
+---
+
+**8️⃣ Can Wireshark decrypt encrypted traffic?**
+
+* **Yes**, but **only under certain conditions.**
+  Wireshark can decrypt:
+
+  * **TLS/SSL traffic** if you have the session keys or server’s private key.
+  * **WPA/WPA2 Wi-Fi traffic** if you know the passphrase and capture the handshake.
+    Otherwise, encrypted data (like HTTPS) appears as unreadable ciphertext.
+
+---
+
+### **Key Concepts**
+
+* **Packet Capture:** Process of recording network data packets using tools like Wireshark or tcpdump.
+* **Protocol Analysis:** Examining packet contents to understand communication patterns or detect issues.
+* **TCP/IP Model:** A 4-layer model (Application, Transport, Internet, Network Access) used for data transmission.
+* **Network Troubleshooting:** Diagnosing problems like latency, dropped connections, or incorrect routing using packet data.
+* **Filtering:** Using Wireshark filters to narrow down traffic by protocol, IP, or port for efficient analysis.
+
+---
